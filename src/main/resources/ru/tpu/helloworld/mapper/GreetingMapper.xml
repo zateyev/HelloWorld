@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE mapper
+        PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+        'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+
+<mapper namespace='ru.tpu.helloworld.mapper.GreetingMapper'>
+
+    <select id='getGreetingById' parameterType='int' resultType='ru.tpu.helloworld.entity.Greeting'>
+        SELECT
+            id               AS greetingId,
+            greeting_message AS greetingMessage
+        FROM greeting
+        WHERE id = #{greetingId}
+    </select>
+
+    <insert id='insertGreeting' parameterType='ru.tpu.helloworld.entity.Greeting' useGeneratedKeys='true'
+            keyProperty='greetingId'
+            keyColumn="greetingId">
+        INSERT INTO greeting (greeting_message)
+        VALUES (#{greetingMessage})
+    </insert>
+
+    <update id='updateGreeting' parameterType='ru.tpu.helloworld.entity.Greeting'>
+        UPDATE greeting
+        SET
+            greeting_message = #{greetingMessage}
+        WHERE id = #{greetingId}
+    </update>
+
+    <delete id='deleteGreeting' parameterType='int'>
+        DELETE FROM greeting
+        WHERE id = #{greetingId}
+    </delete>
+
+</mapper>

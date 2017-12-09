@@ -1,0 +1,1 @@
+INSERT INTO greeting(greeting_message) VALUES('Hello world!');
