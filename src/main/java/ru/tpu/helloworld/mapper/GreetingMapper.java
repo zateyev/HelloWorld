@@ -1,6 +1,6 @@
 package ru.tpu.helloworld.mapper;
 
-import ru.tpu.helloworld.entity.Greeting;
+import ru.tpu.helloworld.model.Greeting;
 
 public interface GreetingMapper {
     void insertGreeting(Greeting greeting);

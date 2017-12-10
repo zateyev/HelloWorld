@@ -5,7 +5,7 @@
 
 <mapper namespace='ru.tpu.helloworld.mapper.GreetingMapper'>
 
-    <select id='getGreetingById' parameterType='int' resultType='ru.tpu.helloworld.entity.Greeting'>
+    <select id='getGreetingById' parameterType='int' resultType='ru.tpu.helloworld.model.Greeting'>
         SELECT
             id               AS greetingId,
             greeting_message AS greetingMessage
@@ -13,14 +13,14 @@
         WHERE id = #{greetingId}
     </select>
 
-    <insert id='insertGreeting' parameterType='ru.tpu.helloworld.entity.Greeting' useGeneratedKeys='true'
+    <insert id='insertGreeting' parameterType='ru.tpu.helloworld.model.Greeting' useGeneratedKeys='true'
             keyProperty='greetingId'
             keyColumn="greetingId">
         INSERT INTO greeting (greeting_message)
         VALUES (#{greetingMessage})
     </insert>
 
-    <update id='updateGreeting' parameterType='ru.tpu.helloworld.entity.Greeting'>
+    <update id='updateGreeting' parameterType='ru.tpu.helloworld.model.Greeting'>
         UPDATE greeting
         SET
             greeting_message = #{greetingMessage}

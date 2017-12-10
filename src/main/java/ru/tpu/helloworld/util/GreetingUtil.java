@@ -1,7 +1,7 @@
 package ru.tpu.helloworld.util;
 
 import org.apache.ibatis.session.SqlSession;
-import ru.tpu.helloworld.entity.Greeting;
+import ru.tpu.helloworld.model.Greeting;
 import ru.tpu.helloworld.mapper.GreetingMapper;
 
 public class GreetingUtil {

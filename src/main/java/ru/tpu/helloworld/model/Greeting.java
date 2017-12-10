@@ -1,4 +1,4 @@
-package ru.tpu.helloworld.entity;
+package ru.tpu.helloworld.model;
 
 public class Greeting {
     private Integer greetingId;
